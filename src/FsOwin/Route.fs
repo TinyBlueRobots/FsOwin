@@ -32,5 +32,5 @@ let matchRoute method' (route : string) requestMethod requestPath =
 let (|Route|_|) (httpMethod : HttpMethod) route ctx = 
   let method' = sprintf "%A" httpMethod
   match matchRoute method' route ctx.Request.Method ctx.Request.Path.Value with
-  | true, args -> Some args
+  | true, parameters -> Some parameters
   | _ -> None
