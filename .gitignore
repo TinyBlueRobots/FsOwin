@@ -118,3 +118,4 @@ paket-files
 .fake
 .paket
 *.swp
+.vs

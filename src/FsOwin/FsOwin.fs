@@ -9,6 +9,7 @@ let route ctx =
   match ctx with
   | Route GET "/hello/{name}" parameters -> hello ctx parameters?name
   | Route POST "/goodbye" _ -> goodbye ctx
+  | Route GET "/greet/{greeting}/{name}" parameters -> greet ctx parameters?greeting parameters?name
   | _ -> 
     ctx.Response.StatusCode <- 404
     Task.Delay 0

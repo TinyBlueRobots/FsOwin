@@ -13,12 +13,15 @@ let exec f =
   |> Async.RunSynchronously
 
 [<Test>]
-let hello() = httpClient.GetStringAsync "/hello/bob" |> exec == "Hello bob"
+let hello() = httpClient.GetStringAsync "/hello/Bob" |> exec == "Hello Bob"
 
 [<Test>]
 let goodbye() = 
   let response = httpClient.PostAsync("/goodbye", new StringContent "bob") |> exec
   response.Content.ReadAsStringAsync() |> exec == "Goodbye bob"
+
+[<Test>]
+let greeting() = httpClient.GetStringAsync "/greet/Good%20day/Bob" |> exec == "Good day Bob"
 
 [<Test>]
 let notFound() = 

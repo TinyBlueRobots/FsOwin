@@ -10,4 +10,6 @@ let goodbye ctx =
   let body = sr.ReadToEnd()
   sprintf "Goodbye %s" body |> ctx.Response.WriteAsync
 
+let greet ctx greeting name = sprintf "%s %s" greeting name |> ctx.Response.WriteAsync
+
 let (?) (d : IDictionary<_, _>) n = d.[n]
