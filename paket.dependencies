@@ -1,0 +1,8 @@
+source https://nuget.org/api/v2
+nuget Fake
+nuget Fsharp.Core
+nuget Microsoft.Owin
+nuget Microsoft.Owin.SelfHost
+nuget Microsoft.Owin.Testing
+nuget NUnit < 3
+nuget NUnit.Runners < 3
